@@ -1,3 +1,5 @@
+import { resume as resumeURL } from "../data/personal.json";
+
 type Link = {
   name: string;
   destination: string;
@@ -11,8 +13,7 @@ export const navLinks: { [index: string]: Link } = {
   contact: { name: "//Contact", destination: "contact" },
   resume: {
     name: "//Resume",
-    destination:
-      "https://drive.google.com/file/d/1JEcFZAH_KA6Ugf_nc0kGU67GnuRLBDFZ/view",
+    destination: resumeURL,
   },
 };
 
