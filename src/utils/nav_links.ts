@@ -1,4 +1,4 @@
-import { resume as resumeURL } from "../data/personal.json";
+import { resume as resumeURL, cv as cvURL } from "../data/personal.json";
 
 type Link = {
   name: string;
@@ -14,6 +14,10 @@ export const navLinks: { [index: string]: Link } = {
   resume: {
     name: "//Resume",
     destination: resumeURL,
+  },
+  cv: {
+    name: "//CV",
+    destination: cvURL,
   },
 };
 

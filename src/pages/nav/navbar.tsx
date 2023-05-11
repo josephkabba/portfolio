@@ -14,7 +14,7 @@ function NavBar() {
   };
 
   useEffect(() => {
-    if (width >= 600){
+    if (width >= 600) {
       setIsOpen(true);
     }
   }, [width]);
@@ -67,10 +67,17 @@ function NavBar() {
             className="ml-3 hover:text-green-400 sm:text-base text-xl mt-4 sm:mt-0 cursor-pointer mr-3"
             key={index}
           >
-            {navLink.name === "//Resume" ? (
-              <a href={navLink.destination} target="_blank">
-                {navLink.name}
-              </a>
+            {navLink.name === "//Resume" || navLink.name === "//CV" ? (
+              (navLink.name === "//Resume" && (
+                <a href={navLink.destination} target="_blank">
+                  {navLink.name}
+                </a>
+              )) ||
+              (navLink.name === "//CV" && (
+                <a href={navLink.destination} target="_blank">
+                  {navLink.name}
+                </a>
+              ))
             ) : (
               <Link
                 activeClass="active"
