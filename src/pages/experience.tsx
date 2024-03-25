@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { navLinks } from "../utils/nav_links";
+import ExpSection from "../components/experience/section";
+import personal from "../data/personal.json";
 import "../styles/experience.css";
 import { workToList } from "../utils/experience_helpers";
-import personal from "../data/personal.json";
-import ExpSection from "./experience/section";
+import { navLinks } from "../utils/nav_links";
+import { useTranslation } from "react-i18next";
+import { TranslationKey } from "../localization";
 
 function Experience() {
   //@ts-ignore
   const [data] = useState(workToList(personal.experience));
   const [reRender, setReRender] = useState(false);
+  const { t } = useTranslation();
   const [copMap] = useState(() => {
     const map = new Map<number, boolean>();
     data.forEach(([_, experience]) => {
@@ -41,7 +44,7 @@ function Experience() {
   };
   return (
     <div id={navLinks.experience.destination} className="layer">
-      <h1 className="heading">Experience</h1>
+      <h1 className="heading">{ t(TranslationKey.experience) }</h1>
       <div className="sm:m-5 sm:p-10">
         {data.map((value, key) => (
           <div key={key} className="pt-4">

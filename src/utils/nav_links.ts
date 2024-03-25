@@ -1,4 +1,6 @@
-import { resume as resumeURL, cv as cvURL } from "../data/personal.json";
+import { t } from "i18next";
+import { resume as resumeURL, } from "../data/personal.json";
+import { TranslationKey } from "../localization";
 
 type Link = {
   name: string;
@@ -6,18 +8,14 @@ type Link = {
 };
 
 export const navLinks: { [index: string]: Link } = {
-  home: { name: "//Home", destination: "/" },
-  expertise: { name: "//Expertise", destination: "expertise" },
-  project: { name: "//Projects", destination: "projects" },
-  experience: { name: "//Experience", destination: "experience" },
-  contact: { name: "//Contact", destination: "contact" },
+  home: { name: `//${t(TranslationKey.home)}`, destination: "/" },
+  expertise: { name: `//${t(TranslationKey.expertise)}`, destination: "expertise" },
+  project: { name: `//${t(TranslationKey.projects)}`, destination: "projects" },
+  experience: { name: `//${t(TranslationKey.experience)}`, destination: "experience" },
+  contact: { name: `//${t(TranslationKey.contact)}`, destination: "contact" },
   resume: {
-    name: "//Resume",
+    name: `//${t(TranslationKey.resume)}`,
     destination: resumeURL,
-  },
-  cv: {
-    name: "//CV",
-    destination: cvURL,
   },
 };
 

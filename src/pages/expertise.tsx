@@ -1,10 +1,13 @@
-import { navLinks } from "../utils/nav_links";
+import { useTranslation } from "react-i18next";
+import EaseInAnimation from "../components/motion/ease_in_animation";
 import data from "../data/personal.json";
 import findListLastItem from "../utils/find_list_last_item";
-import EaseInAnimation from "./motion/ease_in_animation";
+import { navLinks } from "../utils/nav_links";
+import { TranslationKey } from "../localization";
 
 function Expertise() {
   const expertiseData = data.expertise;
+  const { t } = useTranslation();
 
   const isLast = (list: string[], counter: number): boolean => {
     const [lastIndex, _] = findListLastItem(list);
@@ -12,7 +15,7 @@ function Expertise() {
   };
   return (
     <div id={navLinks.expertise.destination} className="layer">
-      <h1 className="heading">Expertise</h1>
+      <h1 className="heading">{ t(TranslationKey.expertise) }</h1>
 
       <div className="sm:m-5 sm:p-10 flex flex-col sm:flex-row">
         <EaseInAnimation duration={1.4} className="grow px-5">

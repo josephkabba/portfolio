@@ -2,10 +2,14 @@ import { Project } from "../../utils/projects";
 import dataset from "../../data/personal.json";
 import { useState } from "react";
 import { getLocalImageUrl } from "../../utils/images";
+import { useTranslation } from "react-i18next";
+import { TranslationKey } from "../../localization";
 
 export default function FeaturedProjectCard({ data }: { data: Project }) {
   const [logos] = useState(dataset.logos);
   const image = getLocalImageUrl(data.image);
+  const { t } = useTranslation();
+
   return (
     <div className="flex text-left flex-col items-center sm:flex-row  w-full p-3">
       {data.link === "" ? (
@@ -34,7 +38,7 @@ export default function FeaturedProjectCard({ data }: { data: Project }) {
             </h1>
           </a>
         )}
-        <h1 className="font-medium">Technology: &emsp; {data.mainTech}</h1>
+        <h1 className="font-medium">{ t(TranslationKey.technology) }: &emsp; {data.mainTech}</h1>
         <p className="font-light">{data.description}</p>
         <div className="flex flex-col sm:flex-row">
           {data.tech.map((name, key) => (

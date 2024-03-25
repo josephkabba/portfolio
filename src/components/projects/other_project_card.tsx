@@ -1,9 +1,13 @@
 import { Project } from "../../utils/projects";
 import dataset from "../../data/personal.json";
 import { useState } from "react";
+import { TranslationKey } from "../../localization";
+import { useTranslation } from "react-i18next";
 
 export default function OtherProjectCard({ data }: { data: Project }) {
   const [logos] = useState(dataset.logos);
+  const { t } = useTranslation();
+  
   return (
     <div className="flex flex-col grow w-full h-full space-y-4 p-5 shadow-2xl rounded">
       {data.link === "" ? (
@@ -18,7 +22,7 @@ export default function OtherProjectCard({ data }: { data: Project }) {
         </a>
       )}
 
-      <h1 className="font-medium">Technology: &emsp; {data.mainTech}</h1>
+      <h1 className="font-medium">{ t(TranslationKey.technology) }: &emsp; {data.mainTech}</h1>
       <p className="font-light">{data.description}</p>
 
       <div className="w-full flex flex-row h-full items-end sm:justify-end">

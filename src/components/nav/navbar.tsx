@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-scroll";
 import { getNavLinks } from "../../utils/nav_links";
 import "../../styles/navbar.css";
