@@ -1,36 +1,43 @@
+import React from "react";
 import capitalize from "../../utils/capitalize";
 
-export default function InfoCard({
-  personalInfo,
-}: {
+interface InfoCardProps {
   personalInfo: [string, string][];
-}) {
-  const brackets: string[] = ["{", "}"];
+}
+
+export default function InfoCard({ personalInfo }: InfoCardProps) {
   return (
-    <div className="sm:flex flex-col sm:ml-10 shadow-xl w-full hidden bg-purple-800  rounded-xl transition-grow">
-      <div className="flex flex-row p-3 justify-start">
-        <div className="rounded-full shadow w-4 h-4 mr-2 bg-red-400"></div>
-        <div className="rounded-full shadow w-4 h-4 mr-2 bg-orange-400"></div>
-        <div className="rounded-full shadow w-4 h-4 bg-green-400"></div>
+    <div className="w-full lg:w-1/2 bg-slate-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg overflow-hidden shadow-lg">
+      <div className="flex items-center space-x-2 p-3 bg-slate-700">
+        <div className="w-3 h-3 rounded-full bg-red-400"></div>
+        <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+        <div className="w-3 h-3 rounded-full bg-green-400"></div>
       </div>
-      <hr className="bg-white mt-1" />
-      <div className="text-white p-6 font-bold">
-        <h1>{brackets[0]}</h1>
-        <ul className="ml-4">
-          {personalInfo.map((value, key) => (
-            <li key={key} className="mb-2 sm:line-clamp-1">
-              {capitalize(value[0])}: &emsp;
-              {value[1].includes("http") ? (
-                <a className="hover:underline" target="_blank" href={value[1]}>
-                  {value[1]}
-                </a>
-              ) : (
-                value[1]
-              )}
-            </li>
+      <div className="p-6 font-mono text-sm">
+        <p className="text-cyan-300">&#123;</p>
+        <div className="ml-4">
+          {personalInfo.map(([key, value]) => (
+            <p key={key} className="mb-2">
+              <span className="text-purple-300">{capitalize(key)}:</span>{" "}
+              <span className="text-green-300">
+                {value.includes("http") ? (
+                  <a
+                    className="hover:underline"
+                    target="_blank"
+                    href={value}
+                    rel="noreferrer"
+                  >
+                    "{value}"
+                  </a>
+                ) : (
+                  `"${value}"`
+                )}
+              </span>
+              ,
+            </p>
           ))}
-        </ul>
-        <h1>{brackets[1]}</h1>
+        </div>
+        <p className="text-cyan-300">&#125;</p>
       </div>
     </div>
   );

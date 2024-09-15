@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'RetroFuture';
+  src: url('/path/to/your/retro-future-font.woff2') format('woff2');
+}
+
+.retro-box {
+  box-shadow: 0 0 10px rgba(77, 208, 225, 0.5);
+}
+
+.star-field {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 5s infinite;
+  opacity: 0.3;
+}
+
+@keyframes twinkle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

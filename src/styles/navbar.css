@@ -1,6 +1,9 @@
-.bg-blur {
-  background: transparent;
-  overflow: hidden;
-  z-index: 1;
-  backdrop-filter: blur(10px);
+.retro-nav-text {
+  font-family: 'RetroFuture', sans-serif;
+  text-shadow: 0 0 5px #4dd0e1;
+}
+
+.active {
+  color: #4ade80; /* green-400 */
+  text-shadow: 0 0 10px #4ade80, 0 0 20px #4ade80;
 }

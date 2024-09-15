@@ -1,14 +1,7 @@
-export type ExperienceModel = {
-  id: number;
-  title: string;
-  description: string;
-  duration: string;
-  area: string;
-  tech: string[];
-};
+import { ExperienceModel } from "../data/models";
 
 export function workToList(data: {
-  [index: string]: ExperienceModel;
+  [index: string]: any;
 }): [string, ExperienceModel][] {
   const entries = Object.entries(data);
   return entries;

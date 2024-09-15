@@ -1,3 +1,3 @@
 export const getLocalImageUrl = (file: string): string => {
-  return "/images/" + file;
+  return "src/images/" + file;
 };

@@ -7,7 +7,7 @@
   content: "";
   z-index: -1;
   background-image: linear-gradient(to bottom, transparent, 60%, #0f172b),
-    url(../../public/images/squares.jpg);
+    url(../images/squares.jpg);
   background-size: cover;
   opacity: 0.6;
   position: absolute;

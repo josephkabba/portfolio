@@ -1,139 +1,69 @@
 import { useTranslation } from "react-i18next";
+import { twMerge } from "tailwind-merge";
 import EaseInAnimation from "../components/motion/ease_in_animation";
 import data from "../data/personal.json";
-import findListLastItem from "../utils/find_list_last_item";
-import { navLinks } from "../utils/nav_links";
 import { TranslationKey } from "../localization";
+import { navLinks } from "../utils/nav_links";
+import { ExpertiseModel } from "../data/models";
+
+interface ExpertiseCardProps {
+  expertise: ExpertiseModel;
+  index: number;
+}
+
+const ExpertiseCard = ({ expertise, index }: ExpertiseCardProps) => {
+  const colorClasses = [
+    "text-green-400 border-green-400",
+    "text-yellow-400 border-yellow-400",
+    "text-cyan-400 border-cyan-400",
+    "text-red-400 border-red-400",
+    "text-cyan-400 border-cyan-400"
+  ];
+
+  const joinItems = (items: string[]) => items.join(", ");
+
+  return (
+    <EaseInAnimation duration={1.4 + index * 0.2} className="w-full sm:w-1/2 lg:w-1/4 p-4">
+      <div className={twMerge(
+        "h-full p-6 rounded-lg border-2 bg-slate-800 bg-opacity-50 backdrop-filter backdrop-blur-sm",
+        "transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105",
+        colorClasses[index]
+      )}>
+        <div className="flex items-center mb-4">
+          <img className="w-12 h-12 mr-4" src={expertise.icon} alt={expertise.name} />
+          <h2 className={twMerge(`text-2xl font-bold, ${colorClasses[index].split(' ')[0]}`)}>
+            {expertise.name}
+          </h2>
+        </div>
+        <p className="mb-4 text-slate-300">{expertise.detail}</p>
+        <div className="mb-2">
+          <span className="font-semibold text-slate-200">Concepts: </span>
+          <span className="text-slate-300">{joinItems(expertise.architectures)}</span>
+        </div>
+        <div>
+          <span className="font-semibold text-slate-200">
+            {expertise.name === "Software Engineering" ? "Languages" : "Tools"}: 
+          </span>
+          <span className="text-slate-300">{joinItems(expertise.libraries)}</span>
+        </div>
+      </div>
+    </EaseInAnimation>
+  );
+};
 
 function Expertise() {
   const expertiseData = data.expertise;
   const { t } = useTranslation();
 
-  const isLast = (list: string[], counter: number): boolean => {
-    const [lastIndex, _] = findListLastItem(list);
-    return lastIndex === counter;
-  };
   return (
-    <div id={navLinks.expertise.destination} className="layer">
-      <h1 className="heading">{ t(TranslationKey.expertise) }</h1>
-
-      <div className="sm:m-5 sm:p-10 flex flex-col sm:flex-row">
-        <EaseInAnimation duration={1.4} className="grow px-5">
-          <div className="flex flex-row">
-            <img className="w-14 h-14 mr-3" src={expertiseData.android.icon} />
-            <h1 className="text-2xl font-bold text-green-600">
-              {expertiseData.android.name}
-            </h1>
-          </div>
-
-          <p className="pt-3">{expertiseData.android.detail}</p>
-          <p className="pt-3">
-            Concepts:{" "}
-            {expertiseData.android.architectures.map((value, index) =>
-              isLast(expertiseData.android.architectures, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-          <p className="pt-3">
-            Libraries:{" "}
-            {expertiseData.android.libraries.map((value, index) =>
-              isLast(expertiseData.android.libraries, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-        </EaseInAnimation>
-        <EaseInAnimation
-          duration={1.5}
-          className="bg-white w-3 sm:visible invisible float-none rounded mx-4"
-        ></EaseInAnimation>
-        <EaseInAnimation duration={1.6} className="grow px-5 sm:mt-0 mt-10">
-          <div className="flex flex-row">
-            <img className="w-14 h-14 mr-3" src={expertiseData.software.icon} />
-            <h1 className="text-2xl font-bold text-yellow-600">
-              {expertiseData.software.name}
-            </h1>
-          </div>
-
-          <p className="pt-3">{expertiseData.software.detail}</p>
-          <p className="pt-3">
-            Concepts:{" "}
-            {expertiseData.software.architectures.map((value, index) =>
-              isLast(expertiseData.software.architectures, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-          <p className="pt-3">
-            Languages:{" "}
-            {expertiseData.software.libraries.map((value, index) =>
-              isLast(expertiseData.software.libraries, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-        </EaseInAnimation>
-        <EaseInAnimation
-          duration={1.7}
-          className="bg-white w-3 sm:visible invisible float-none rounded mx-4"
-        ></EaseInAnimation>
-        <EaseInAnimation duration={1.8} className="grow px-5 sm:mt-0 mt-10">
-          <div className="flex flex-row">
-            <img className="w-14 h-14 mr-3" src={expertiseData.frontend.icon} />
-            <h1 className="text-2xl font-bold text-blue-300">
-              {expertiseData.frontend.name}
-            </h1>
-          </div>
-
-          <p className="pt-3">{expertiseData.frontend.detail}</p>
-          <p className="pt-3">
-            Concepts:{" "}
-            {expertiseData.frontend.architectures.map((value, index) =>
-              isLast(expertiseData.frontend.architectures, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-          <p className="pt-3">
-            Tools:{"  "}
-            {expertiseData.frontend.libraries.map((value, index) =>
-              isLast(expertiseData.frontend.libraries, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-        </EaseInAnimation>
-        <EaseInAnimation
-          duration={1.9}
-          className="bg-white w-3 sm:visible invisible float-none rounded mx-4"
-        ></EaseInAnimation>
-        <EaseInAnimation duration={2} className="grow px-5 sm:mt-0 mt-10">
-          <div className="flex flex-row">
-            <img className="w-14 h-14 mr-3" src={expertiseData.backend.icon} />
-            <h1 className="text-2xl font-bold text-red-400">
-              {expertiseData.backend.name}
-            </h1>
-          </div>
-
-          <p className="pt-3">{expertiseData.backend.detail}</p>
-          <p className="pt-3">
-            Concepts:{" "}
-            {expertiseData.backend.architectures.map((value, index) =>
-              isLast(expertiseData.backend.architectures, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-          <p className="pt-3">
-            Tools:{" "}
-            {expertiseData.backend.libraries.map((value, index) =>
-              isLast(expertiseData.backend.libraries, index)
-                ? `${value}`
-                : `${value}, `
-            )}
-          </p>
-        </EaseInAnimation>
+    <div id={navLinks.expertise.destination} className="container mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-12 text-center text-cyan-300 retro-text">
+        {t(TranslationKey.expertise)}
+      </h1>
+      <div className="flex flex-wrap -mx-4">
+        {Object.values(expertiseData).map((expertise, index) => (
+          <ExpertiseCard key={expertise.name} expertise={expertise} index={index} />
+        ))}
       </div>
     </div>
   );

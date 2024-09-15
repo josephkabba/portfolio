@@ -1,58 +1,48 @@
-import { useState } from "react";
-import data from "../data/personal.json";
-import { navLinks } from "../utils/nav_links";
-import { Project } from "../utils/projects";
-import EaseInAnimation from "../components/motion/ease_in_animation";
-import FeaturedProjectCard from "../components/projects/featured_project_card";
-import OtherProjectCard from "../components/projects/other_project_card";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import EaseInAnimation from "../components/motion/ease_in_animation";
+import FeaturedProjectCard from "../components/projects/featuredProjectCard";
+import OtherProjectCard from "../components/projects/otherProjectCard";
+import { Project } from "../data/models";
+import data from "../data/personal.json";
 import { TranslationKey } from "../localization";
-const variant = {
-  visible: { opacity: 1, scale: 1 },
-  hidden: { opacity: 0, scale: 0 },
-};
+import { navLinks } from "../utils/nav_links";
 
 function Projects() {
   const { t } = useTranslation();
-  const [projects] = useState(() => {
-    const featured: Project[] = data.projects
-      .filter((value) => value.featured === true)
-      .sort();
-    const silent: Project[] = data.projects
-      .filter((value) => value.featured === false)
-      .sort();
+  const projects = useMemo(() => {
+      const featured: Project[] = data.projects
+        .filter((value) => value.featured === true)
+        .sort((a, b) => a.id - b.id);
+      const silent: Project[] = data.projects
+        .filter((value) => value.featured === false)
+        .sort((a, b) => a.id - b.id);
 
-    return {
-      featured: featured,
-      silent: silent,
-    };
-  });
+      return { featured, silent };
+  }, [data.projects]);
 
-  
   return (
-    <div id={navLinks.project.destination} className="layer">
-      <h1 className="heading">{ t(TranslationKey.projects) }</h1>
-      <div className="flex  sm:mx-5 sm:p-10 flex-col w-full ">
-        {projects.featured.map((project, key) => (
-          <EaseInAnimation
-            key={key}
-            className="mt-4"
-          >
-            <FeaturedProjectCard data={project} />
+    <div id={navLinks.project.destination} className="container mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-12 text-center text-cyan-300 retro-text">
+        {t(TranslationKey.projects)}
+      </h1>
+      <div className="space-y-12">
+        {projects.featured.map((project, index) => (
+          <EaseInAnimation key={project.name} className="mt-4">
+            <FeaturedProjectCard data={project} index={index} />
           </EaseInAnimation>
         ))}
-        <EaseInAnimation className="flex w-full mt-24 flex-row items-center">
-          <hr className="grow bg-white rounded " />
-          <h1 className="mx-10 text-center text-xl">{ t(TranslationKey.otherProjects) }</h1>
-          <hr className="grow bg-white rounded " />
+        <EaseInAnimation className="flex items-center">
+          <hr className="flex-grow border-t border-cyan-400" />
+          <h2 className="mx-4 text-xl text-cyan-300 retro-text">
+            {t(TranslationKey.otherProjects)}
+          </h2>
+          <hr className="flex-grow border-t border-cyan-400" />
         </EaseInAnimation>
-        <div className="grid sm:gap-6 sm:grid-cols-3 grid-cols-1 mt-10">
-          {projects.silent.map((project, key) => (
-            <EaseInAnimation
-              key={key}
-              className="mt-4"
-            >
-              <OtherProjectCard data={project} />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.silent.map((project, index) => (
+            <EaseInAnimation key={project.name} className="h-full">
+              <OtherProjectCard data={project} index={index} />
             </EaseInAnimation>
           ))}
         </div>

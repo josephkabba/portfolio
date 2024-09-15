@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.retro-text {
+  font-family: 'RetroFuture', sans-serif;
+  text-shadow: 0 0 10px #4dd0e1, 0 0 20px #4dd0e1, 0 0 30px #4dd0e1;
+}
+
 @layer components {
   .layer {
     @apply h-full overflow-hidden text-text_custom pt-20 w-full pb-5 px-5;
@@ -14,4 +19,8 @@
   .heading {
     @apply text-2xl sm:text-left text-center p-5 sm:ml-12 font-semibold sm:text-4xl
   }
+}
+
+.group-responsive-full-screen {
+  @apply h-full sm:h-screen;
 }

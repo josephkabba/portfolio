@@ -5,7 +5,7 @@ const translation: Translation = {
   [TranslationKey.hi]: 'Hi',
   [TranslationKey.iAmJoseph]: 'I am Joseph',
   [TranslationKey.softwareEngineer]: 'Software Engineer',
-  [TranslationKey.homeSubtitle]: 'I build software for the web, mobile and systems',
+  [TranslationKey.homeSubtitle]: 'I build software that grows businesses',
   [TranslationKey.technology]: 'Technology',
   [TranslationKey.home]: 'Home',
   [TranslationKey.expertise]: 'Expertise',

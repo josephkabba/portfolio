@@ -1,37 +1,33 @@
-import { useState } from "react";
-import image from "../../public/images/project.svg";
-import InfoCard from "../components/contact/infoCard";
-import data from "../data/personal.json";
-import "../styles/contact.css";
-import { openEmailClient } from "../utils/email";
-import { navLinks } from "../utils/nav_links";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { TranslationKey } from "../localization";
+import data from "../data/personal.json";
+import { openEmailClient } from "../utils/email";
+import { navLinks } from "../utils/nav_links";
+import InfoCard from "../components/contact/infoCard";
+import image from "../images/project.svg";
 
 function Contact() {
-  const [personalInfo, _] = useState(Object.entries(data.personal_info));
   const { t } = useTranslation();
+  const personalInfo = Object.entries(data.personal_info);
+
   return (
-    <div id={navLinks.contact.destination} className="layer">
-      <h1 className="heading">{ t(TranslationKey.contact) }</h1>
-      <div className="rounded-xl sm:m-5 p-10 flex sm:justify-between justify-center flex-col sm:flex-row">
-        
-          <InfoCard personalInfo={personalInfo} />
-       
-
-        <div className="flex flex-col justify-center items-center w-full sm:ml-2">
-          <img className="w-44 h-44" src={image} />
-          <h1 className="text-center font-medium text-2xl">
-            { t(TranslationKey.letsWork) }.
-          </h1>
-
+    <div id={navLinks.contact.destination} className="container mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-12 text-center text-cyan-300 retro-text">
+        {t(TranslationKey.contact)}
+      </h1>
+      <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
+        <InfoCard personalInfo={personalInfo} />
+        <div className="flex flex-col items-center justify-center w-full lg:w-1/2 bg-slate-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg p-8">
+          <img className="w-44 h-44 mb-6" src={image} alt="Contact" />
+          <h2 className="text-2xl font-bold text-cyan-300 mb-6 retro-text">
+            {t(TranslationKey.letsWork)}
+          </h2>
           <button
-            className="shadow mt-6 button-background rounded-xl text-lg p-6 font-bold text-white hover:bg-green-700 cursor-pointer border border-green-700"
-            onClick={(e) => {
-              openEmailClient(data.personal_info.email, e);
-            }}
+            className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-full transition-colors duration-300 shadow-lg hover:shadow-cyan-500/50"
+            onClick={(e) => openEmailClient(data.personal_info.email, e)}
           >
-            { t(TranslationKey.letsChat) }.
+            {t(TranslationKey.letsChat)}
           </button>
         </div>
       </div>

@@ -1,106 +1,41 @@
 :root {
-  --circle-size: 25rem;
-  --circle-size-1: 21.875rem;
-  --circle-size-2: 18.75rem;
-  --circle-size-3: 15.625rem;
-  --circle-size-4: 12.5rem;
   --circle-border: 1px;
   --circle-color-opacity: 0.4;
 }
 
 .circle {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: var(--circle-border) solid
-    rgba(15, 23, 43, var(--circle-color-opacity));
+  border: var(--circle-border) solid rgba(15, 23, 43, var(--circle-color-opacity));
   border-radius: 50%;
   width: var(--circle-size);
   height: var(--circle-size);
-}
-
-.circle-1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: var(--circle-border) solid
-    rgba(15, 23, 43, var(--circle-color-opacity));
-  border-radius: 50%;
-  width: var(--circle-size-1);
-  height: var(--circle-size-1);
-}
-
-.circle-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: var(--circle-border) solid
-    rgba(15, 23, 43, var(--circle-color-opacity));
-  border-radius: 50%;
-  width: var(--circle-size-2);
-  height: var(--circle-size-2);
-}
-
-.circle-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: var(--circle-border) solid
-    rgba(15, 23, 43, var(--circle-color-opacity));
-  border-radius: 50%;
-  width: var(--circle-size-3);
-  height: var(--circle-size-3);
-}
-
-.circle-4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: var(--circle-border) solid
-    rgba(15, 23, 43, var(--circle-color-opacity));
-  border-radius: 50%;
-  width: var(--circle-size-4);
-  height: var(--circle-size-4);
+  z-index: var(--circle-z-index);
 }
 
 .side-image {
   position: absolute;
-  transform: translate(calc(var(--circle-size) / 2));
-}
-
-.side-image-1 {
-  position: absolute;
-  transform: translate(calc(var(--circle-size-1) / 2));
-}
-
-.side-image-2 {
-  position: absolute;
-  transform: translate(calc(var(--circle-size-2) / 2));
-}
-
-.side-image-3 {
-  position: absolute;
-  transform: translate(calc(var(--circle-size-3) / 2));
-}
-
-.side-image-4 {
-  position: absolute;
-  transform: translate(calc(var(--circle-size-4) / 2));
+  object-fit: cover;
 }
 
 .spinning-circle {
   animation-name: rotate;
-  animation-duration: 100s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-play-state: running;
 }
 
-@-webkit-keyframes rotate {
+.center-image {
+  z-index: 1000;
+  object-fit: cover;
+}
+
+@keyframes rotate {
   from {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }

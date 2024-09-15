@@ -1,4 +1,4 @@
-import { EnumDictionary } from "../../models/enum";
+import { EnumDictionary } from "../../data/enum";
 
 export type Translation = EnumDictionary<TranslationKey, string>;
 
