@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '>=20.17.0'
+          check-latest: false
       - run: yarn add
             yarn run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -19,7 +23,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KABBAJOSEPHTIMOTHY_9D508 }}'
           channelId: live
           projectId: kabbajosephtimothy-9d508
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '>=20.17.0'
-          check-latest: false
