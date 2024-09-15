@@ -1,7 +1,11 @@
 {
   "name": "profileweb",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
+  "author": "Kabba Joseph Timothy",
+  "engines": {
+    "node": ">= 20.17.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
