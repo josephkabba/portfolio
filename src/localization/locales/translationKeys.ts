@@ -17,6 +17,7 @@ export enum TranslationKey {
   resume = 'resume',
   about = 'about',
   aboutMe = 'aboutMe',
+  buildTag = 'buildTag',
   letsWork = 'letsWork',
   letsChat = 'letsChat',
   siteCreator = 'siteCreator',

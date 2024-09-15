@@ -1,9 +1,18 @@
 .retro-nav-text {
   font-family: 'RetroFuture', sans-serif;
-  text-shadow: 0 0 5px #4dd0e1;
+  text-shadow: 0 0 5px #4dd0e1, 0 0 10px #4dd0e1;
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .active {
   color: #4ade80; /* green-400 */
-  text-shadow: 0 0 10px #4ade80, 0 0 20px #4ade80;
+  text-shadow: 0 0 10px #4ade80, 0 0 20px #4ade80, 0 0 30px #4ade80;
+}
+
+@media (max-width: 767px) {
+  .retro-nav-text {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
 }

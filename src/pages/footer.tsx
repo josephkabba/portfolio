@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container mx-auto mt-4 pt-4 border-t border-slate-700 text-center text-xs text-slate-500">
-        <p>Built with React, Vite, Tailwind CSS, and lots of coffee ☕</p>
+        <p>{t(TranslationKey.buildTag)}</p>
       </div>
     </footer>
   );

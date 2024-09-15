@@ -20,6 +20,7 @@ const translation: Translation = {
   [TranslationKey.siteCreator]: 'This site was created by Kabba Joseph Timothy',
   [TranslationKey.copyRight]: '©copy right since 2024',
   [TranslationKey.otherProjects]: 'Other Projects',
+  [TranslationKey.buildTag]: 'Built with React, Vite, Tailwind CSS, and lots of coffee ☕',
 };
 
 const common = { translation };
