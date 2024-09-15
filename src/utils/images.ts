@@ -1,3 +1,3 @@
 export const getLocalImageUrl = (file: string): string => {
-  return "src/images/" + file;
+  return new URL(`/src/images/${file}`, import.meta.url).href;
 };
