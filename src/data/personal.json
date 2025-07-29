@@ -153,6 +153,17 @@
       "link": "https://www.imagineear.com/"
     },
     {
+      "id": 0,
+      "name": "Eastern Vibes Africa",
+      "featured": true,
+      "type": "w",
+      "mainTech": "ReactJS",
+      "image": "easternvibesafrica.png",
+      "description": "I built this in a week based on what the client wanted. And I am happy that the site gets over 1500 vists a day. Simple and effective",
+      "tech": ["ReactJS", "Tailwind CSS", "Firebase", "TypeScript"],
+      "link": "https://easternvibesafrica.com/"
+    },
+    {
       "name": "KabbaCom Education Teachers",
       "id": 8,
       "mainTech": "Android, IOS",
