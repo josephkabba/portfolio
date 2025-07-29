@@ -153,7 +153,7 @@
       "link": "https://www.imagineear.com/"
     },
     {
-      "id": 0,
+      "id": 1,
       "name": "Eastern Vibes Africa",
       "featured": true,
       "type": "w",
@@ -187,7 +187,7 @@
     },
     {
       "name": "Prayminder Android Restoration",
-      "id": 4,
+      "id": 7,
       "mainTech": "Flutter",
       "featured": true,
       "type": "m",
@@ -207,7 +207,7 @@
     {
       "name": "KabbaCom Education Students",
       "mainTech": "Android, IOS",
-      "id": 7,
+      "id": 9,
       "featured": true,
       "type": "m",
       "image": "kabbacom_students.png",
@@ -229,7 +229,7 @@
     {
       "name": "KabbaCom Website",
       "mainTech": "ReactJS",
-      "id": 12,
+      "id": 13,
       "type": "w",
       "featured": true,
       "image": "kabbacom_image.png",
@@ -268,7 +268,7 @@
       "name": "KabbaCom Internal Staff Mobile App",
       "mainTech": "Android",
       "featured": false,
-      "id": 11,
+      "id": 12,
       "type": "m",
       "image": "",
       "tech": [
@@ -318,7 +318,7 @@
     {
       "name": "Just the Way You Are Girl",
       "mainTech": "ReactJS",
-      "id": 9,
+      "id": 10,
       "type": "w",
       "featured": true,
       "image": "jtwyag.png",
@@ -338,7 +338,7 @@
       "name": "The Watcher",
       "mainTech": "NextJS",
       "featured": true,
-      "id": 5,
+      "id": 6,
       "type": "w",
       "image": "watcher.png",
       "tech": [
@@ -376,7 +376,7 @@
     {
       "name": "TELA Application",
       "mainTech": "Android, IOS",
-      "id": 10,
+      "id": 11,
       "type": "m",
       "featured": true,
       "image": "tela.png",
@@ -398,7 +398,7 @@
     {
       "name": "KabbaCom Education Web App",
       "mainTech": "NextJS",
-      "id": 3,
+      "id": 5,
       "type": "w",
       "featured": true,
       "image": "education.png",
@@ -416,7 +416,7 @@
     {
       "name": "KuduAfrica",
       "mainTech": "NextJS",
-      "id": 1,
+      "id": 2,
       "type": "w",
       "featured": true,
       "image": "kudu.png",
@@ -434,7 +434,7 @@
     {
       "name": "Zeromission",
       "mainTech": "NextJS",
-      "id": 1,
+      "id": 3,
       "type": "w",
       "featured": true,
       "image": "zeromission.png",
@@ -450,7 +450,7 @@
     {
       "name": "LFG (Looking for a Group)",
       "mainTech": "Android, IOS",
-      "id": 2,
+      "id": 4,
       "type": "m",
       "featured": true,
       "image": "lfg.png",
