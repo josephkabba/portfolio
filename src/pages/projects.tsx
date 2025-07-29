@@ -10,11 +10,14 @@ import { navLinks } from "../utils/nav_links";
 
 function Projects() {
   const { t } = useTranslation();
-  const projects = useMemo(() => {
-      const featured: Project[] = data.projects
+  const projects = useMemo(() =>
+  {
+    //ts-ignore
+      const featured = data.projects
         .filter((value) => value.featured === true)
         .sort((a, b) => a.id - b.id);
-      const silent: Project[] = data.projects
+    //ts-ignore
+      const silent = data.projects
         .filter((value) => value.featured === false)
         .sort((a, b) => a.id - b.id);
 
@@ -29,7 +32,7 @@ function Projects() {
       <div className="space-y-12">
         {projects.featured.map((project, index) => (
           <EaseInAnimation key={project.name} className="mt-4">
-            <FeaturedProjectCard data={project} index={index} />
+            <FeaturedProjectCard data={project as Project} index={index} />
           </EaseInAnimation>
         ))}
         <EaseInAnimation className="flex items-center">
@@ -42,7 +45,7 @@ function Projects() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.silent.map((project, index) => (
             <EaseInAnimation key={project.name} className="h-full">
-              <OtherProjectCard data={project} index={index} />
+              <OtherProjectCard data={project as Project} index={index} />
             </EaseInAnimation>
           ))}
         </div>

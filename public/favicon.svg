@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4dd0e1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGradient)" stroke="#4dd0e1" stroke-width="2"/>
+  
+  <!-- Subtle tech pattern background -->
+  <circle cx="32" cy="32" r="25" fill="none" stroke="#4dd0e1" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#06b6d4" stroke-width="0.3" opacity="0.2"/>
+  
+  <!-- Main text "<KJT />" -->
+  <text x="32" y="38" font-family="JetBrains Mono, Consolas, Monaco, monospace" 
+        font-size="12" font-weight="600" text-anchor="middle" 
+        fill="url(#textGradient)" filter="url(#glow)">
+    &lt;KJT /&gt;
+  </text>
+  
+  <!-- Subtle corner accents -->
+  <path d="M8 8 L8 16 L16 16" fill="none" stroke="#4dd0e1" stroke-width="1" opacity="0.4"/>
+  <path d="M56 8 L56 16 L48 16" fill="none" stroke="#4dd0e1" stroke-width="1" opacity="0.4"/>
+  <path d="M8 56 L8 48 L16 48" fill="none" stroke="#4dd0e1" stroke-width="1" opacity="0.4"/>
+  <path d="M56 56 L56 48 L48 48" fill="none" stroke="#4dd0e1" stroke-width="1" opacity="0.4"/>
+</svg>

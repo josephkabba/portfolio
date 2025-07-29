@@ -1,10 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .retro-text {
-  font-family: 'RetroFuture', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   text-shadow: 0 0 10px #4dd0e1, 0 0 20px #4dd0e1, 0 0 30px #4dd0e1;
+  font-weight: 600;
+}
+
+.retro-box {
+  box-shadow: 
+    0 0 20px rgba(77, 208, 225, 0.3),
+    inset 0 0 20px rgba(77, 208, 225, 0.1);
+}
+
+.star-field {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #4dd0e1, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(77, 208, 225, 0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #10b981, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(16, 185, 129, 0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #06b6d4, transparent),
+    radial-gradient(1px 1px at 200px 60px, rgba(6, 182, 212, 0.4), transparent),
+    radial-gradient(2px 2px at 240px 90px, #4dd0e1, transparent),
+    radial-gradient(1px 1px at 280px 20px, rgba(77, 208, 225, 0.7), transparent);
+  background-repeat: repeat;
+  background-size: 300px 150px;
+  animation: sparkle 25s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes sparkle {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(50px) translateY(-25px); }
+  50% { transform: translateX(100px) translateY(0); }
+  75% { transform: translateX(150px) translateY(25px); }
+  100% { transform: translateX(300px) translateY(0); }
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #0f172a, #1e293b);
+  border-radius: 0.5rem;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(45deg, #06b6d4, #10b981, #3b82f6);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.professional-card {
+  @apply bg-slate-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-lg border border-slate-700 hover:border-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20;
+}
+
+.tech-tag {
+  @apply px-3 py-1 text-xs font-medium text-cyan-300 bg-cyan-400 bg-opacity-20 rounded-full border border-cyan-400 border-opacity-30 hover:border-opacity-60 transition-all duration-200;
+}
+
+.section-divider {
+  @apply relative w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent my-16;
+}
+
+.floating-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+  box-shadow: 
+    0 0 20px rgba(6, 182, 212, 0.4),
+    0 0 40px rgba(6, 182, 212, 0.2),
+    0 0 60px rgba(6, 182, 212, 0.1);
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #06b6d4 0%, #10b981 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @layer components {
@@ -19,8 +109,143 @@
   .heading {
     @apply text-2xl sm:text-left text-center p-5 sm:ml-12 font-semibold sm:text-4xl
   }
+
+  .professional-button {
+    @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-cyan-500/30 transform hover:scale-105;
+  }
+
+  .nav-item {
+    @apply relative px-4 py-2 text-cyan-300 hover:text-white transition-all duration-300 cursor-pointer rounded-md;
+  }
+
+  .nav-item::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300;
+    content: '';
+  }
+
+  .nav-item:hover::after {
+    @apply w-full;
+  }
 }
 
 .group-responsive-full-screen {
   @apply h-full sm:h-screen;
+}
+
+.three-d-card-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  margin: 20px 0;
+}
+
+.three-d-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.three-d-card-container:hover .three-d-card {
+  box-shadow: 
+    0 25px 50px -12px rgba(77, 208, 225, 0.25),
+    0 0 0 1px rgba(77, 208, 225, 0.05),
+    0 0 60px rgba(77, 208, 225, 0.1);
+}
+
+/* Enhanced project card animations */
+.project-card-3d {
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transform-style: preserve-3d;
+}
+
+.project-card-3d:hover {
+  transform: translateZ(20px) !important;
+}
+
+/* Floating animation for project cards */
+@keyframes cardFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(var(--random-x, 0deg)) rotateY(var(--random-y, 0deg)) rotateZ(var(--random-z, 0deg)); 
+  }
+  50% { 
+    transform: translateY(-5px) rotateX(var(--random-x, 0deg)) rotateY(var(--random-y, 0deg)) rotateZ(var(--random-z, 0deg)); 
+  }
+}
+
+.three-d-card:not(:hover) {
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+/* Ensure text remains crisp */
+.three-d-card * {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grid improvements for 3D cards */
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #06b6d4, #10b981);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #0891b2, #059669);
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

@@ -8,12 +8,12 @@
     "github": "https://github.com/josephkabba/"
   },
 
-  "resume": "https://firebasestorage.googleapis.com/v0/b/kabbajosephtimothy-9d508.appspot.com/o/kabba_jt_2024_resume_new.pdf?alt=media&token=22b1f2a6-da60-4174-8147-7fc1a6ceac2a",
+  "resume": "https://firebasestorage.googleapis.com/v0/b/kabbajosephtimothy-9d508.appspot.com/o/Kabba%20Joseph%20Timothy%20-%20Full-Stack%20Engineer%20CV%202025.pdf?alt=media&token=be19e982-ad80-4fa3-aa28-23dd036e2c68",
 
   "about": [
-    "I'm a software engineer specializing in web and mobile development for both iOS and Android. My journey began in 2013, driven by curiosity and self-taught programming through online resources.",
-    "Over the years, I've honed my skills in front-end and back-end technologies, focusing on creating efficient, user-friendly applications. My approach combines strong problem-solving abilities with a passion for clean, maintainable code.",
-    "I thrive on continuous learning and enjoy collaborating with teams to build innovative solutions. My goal is to create impactful software that enhances user experiences and drives technological progress."
+    "I'm a passionate Full-Stack Software Engineer with 7+ years of experience building scalable applications that drive business growth. I specialize in architecting end-to-end solutions from mobile apps to enterprise systems.",
+    "My expertise spans modern web technologies including React.js, Node.js, and cloud platforms like AWS and GCP. I've led teams to deliver 10+ production applications with 99.9% uptime reliability.",
+    "I'm driven by creating user-centric solutions that solve real-world problems. Whether it's building cross-platform mobile apps or implementing microservices architecture, I focus on performance, scalability, and exceptional user experiences."
   ],
 
   "planet": {
@@ -141,6 +141,17 @@
   },
 
  "projects": [
+     {
+      "id": 0,
+      "name": "Imagineer Tours Platform",
+      "featured": true,
+      "type": "w",
+      "mainTech": "Flutter",
+      "image": "imagineer_home.png",
+      "description": "Comprehensive cross-platform solution for tour operators with mobile app, web admin portal, and integrated booking system. Expanded market reach by 300% and reduced operational overhead by 40%.",
+      "tech": ["Flutter, android, IOS, web"],
+      "link": "https://www.imagineear.com/"
+    },
     {
       "name": "KabbaCom Education Teachers",
       "id": 8,
@@ -394,7 +405,7 @@
     {
       "name": "KuduAfrica",
       "mainTech": "NextJS",
-      "id": 0,
+      "id": 1,
       "type": "w",
       "featured": true,
       "image": "kudu.png",
@@ -446,65 +457,61 @@
   ],
 
   "experience": {
-    "Kabba Industries": {
+      "Heyinnovation (Freelance)": {
       "id": 0,
-      "title": "Chief Technical Officer (CTO)",
-      "duration": "Jan 2017 - Now",
-      "area": "Uganda Kampala",
-      "description": "As CTO, I lead a dynamic team of 7 developers in delivering cutting-edge software solutions for a diverse client base. My role encompasses strategic technology planning, overseeing project lifecycles, and ensuring the adoption of best practices in software development. Key achievements include:\n\n• Spearheaded the implementation of agile methodologies, resulting in a 30% increase in project delivery efficiency.\n• Guided the team in adopting a microservices architecture, enhancing scalability and maintainability of our solutions.\n• Implemented a comprehensive code review process and continuous integration pipeline, significantly improving code quality and reducing bug rates by 40%.\n• Fostered a culture of innovation, encouraging the team to explore and integrate emerging technologies into our solutions, keeping our offerings at the forefront of the industry.",
-      "tech": [
-        "Android",
-        "Java",
-        "Kotlin",
-        "nest.js",
-        "Firebase",
-        "Typescript",
-        "NextJS",
-        "Javascript",
-        "Tailwind",
-        "NodeJs",
-        "Clean Architecture",
-        "And Many more"
-      ]
+      "title": "IOS engineer",
+      "duration": "2025",
+      "area": "IOS engineering",
+      "description": "Led the developement of an app called Deskless Workers on the IOS side. The app is used by Organisations for communication purposes. In simple terms think of instagram and whatsapp for internal organisation communication.",
+      "tech": ["UIkit", "SwiftUI", "IOS", "Swift", "ObjectiveC", "Xcode"]
+    },
+    "Twelve Oaks Software (Freelance)": {
+      "id": 1,
+      "title": "Full-Stack Mobile Engineer",
+      "duration": "2025",
+      "area": "Cross-Platform Development & System Architecture",
+      "description": "Led comprehensive platform replacement for Imagineer tours company, developing cross-platform mobile application and web-based content management system. Expanded market reach by 300% and reduced operational overhead by 40% through unified booking management system.",
+      "tech": ["Flutter", "React.js", "Node.js", "Stripe", "PayPal", "REST APIs", "Real-time Sync"]
     },
     "Twelve Oaks Software": {
-      "id": 1,
-      "title": "Fullstack and Mobile Engineer (Full-time)",
-      "duration": "May 2023 - Aug 2024",
-      "area": "Uganda Kampala and UK (Remote)",
-      "description": "As a full-time developer at Twelve Oaks Software, I contributed to both web and mobile projects, demonstrating versatility across multiple platforms and technologies. My responsibilities and achievements included:\n\n• Developed and maintained several full-stack web applications using NextJS and Node.js, contributing to improved user engagement and functionality.\n• Worked on cross-platform mobile applications, utilizing Kotlin for Android and Swift for iOS development.\n• Implemented backend systems using C# and .NET, enhancing data processing efficiency and application performance.\n• Collaborated with UX/UI designers to implement intuitive and responsive interfaces, focusing on user experience improvements.\n• Participated in code reviews and knowledge sharing sessions, contributing to the team's overall code quality and development practices.\n• Gained valuable experience in remote work collaboration, effectively communicating and coordinating with team members across different time zones.",
-      "tech": ["Android", "Java", "Kotlin", "Swift", "NextJS", "TypeScript", "C#", "NodeJS"]
+      "id": 2,
+      "title": "Full-Stack Engineer",
+      "duration": "2023 - 2024",
+      "area": "End-to-End Application Development",
+      "description": "Delivered 8+ complete full-stack projects for UK-based software consultancy with 99.5% uptime. Reduced development cycles by 30% through reusable component libraries and standardized deployment processes. Built scalable solutions on AWS and GCP with automated CI/CD pipelines.",
+      "tech": ["React.js", "TypeScript", "React Native", "Flutter", "Node.js", "AWS", "GCP", "CI/CD"]
+    },
+    "KABBA COMMUNICATIONS U Ltd": {
+      "id": 3,
+      "title": "Chief Technology Officer",
+      "duration": "2017 - Present",
+      "area": "Technical Leadership & Full-Stack Development",
+      "description": "Led full-stack development of 10+ applications achieving 4.5+ average app store ratings. Established development processes reducing time-to-market by 35%. Built scalable infrastructure handling significant traffic growth and managed remote development teams across multiple time zones.",
+      "tech": ["React.js", "Node.js", "Mobile Development", "Microservices", "Team Management", "Product Strategy"]
     },
     "Planet Systems": {
-      "id": 2,
-      "title": "Mobile Engineer (Freelance)",
-      "duration": "Feb 2022 - Aug 2022",
-      "area": "Uganda Kampala",
-      "description": "As part of a 4-developer team, I contributed to the creation of an mobile application for school education administrative purposes. My contributions included:\n\n• Implementing key features of the application using Kotlin and Swift, adhering to Clean Architecture principles for maintainable and scalable code.\n• Designing and developing a user-friendly interface that simplified complex administrative tasks, receiving positive feedback from 90% of beta testers.\n• Integrating the app with existing school management systems, streamlining data flow and reducing administrative workload by 40%.\n• Implementing robust testing strategies, including unit and integration tests, ensuring a stable and reliable application with a 99.9% crash-free rate.",
-      "tech": ["Android", "Java", "Kotlin", "Clean Architecture, IOS, Swift"]
-    },
-    "Google Africa Developers Scholarship (GADS)": {
-      "id": 3,
-      "title": "Android Mentor",
-      "duration": "May 2019 - 2024",
-      "description": "As an Android Mentor for the Google Africa Developers Scholarship program, I've played a crucial role in nurturing the next generation of Android developers. My contributions include:\n\n• Providing one-on-one mentorship to over 50 learners, guiding them through complex Android development concepts and best practices.\n• Conducting weekly code reviews and feedback sessions, helping mentees improve their coding skills and adopt industry-standard practices.\n• Organizing and leading group study sessions on advanced topics such as Kotlin coroutines, Jetpack Compose, and app architecture.\n• Assisting mentees in developing portfolio projects, with several mentees successfully landing jobs in top tech companies across Africa.\n• Collaborating with other mentors to continuously improve the program curriculum, ensuring it remains relevant to the evolving Android ecosystem.",
-      "tech": ["Android", "Java", "Kotlin", "Clean Architecture"]
+      "id": 4,
+      "title": "Full-Stack Developer",
+      "duration": "2022",
+      "area": "Enterprise Integration & Data Visualization",
+      "description": "Created comprehensive full-stack solutions connecting mobile applications with web administration interfaces and enterprise systems. Improved business efficiency by 35% and reduced manual data entry by 60%. Achieved 98% client satisfaction across all platform components.",
+      "tech": ["Android", "React.js", "Node.js", "Enterprise APIs", "Data Visualization", "Real-time Sync"]
     },
     "Healthier Uganda": {
-      "id": 4,
-      "title": "Lead Engineer",
-      "duration": "Aug 2021 - July 2022",
-      "area": "Uganda Kampala",
-      "description": "In this dual role, I led a team of 9 developers in creating a comprehensive Android application for the health industry, while also overseeing the backend development. Key achievements include:\n\n• Architected and implemented a scalable Android application using Kotlin and Clean Architecture, serving over 50,000 users in its first year.\n• Designed and developed a robust backend system using Nest.js, capable of handling high-volume data processing for medical records and real-time health monitoring.\n• Implemented secure data handling practices, ensuring compliance with health data protection regulations.\n• Introduced a feature for remote health monitoring, which reduced unnecessary hospital visits by 30% and improved patient care efficiency.\n• Mentored team members in both Android and backend technologies, fostering a culture of continuous learning and innovation.",
-      "tech": ["Android", "Java", "Kotlin", "Clean Architecture", "Nest.js"]
-    },
-    "Just the Way You Are Girl": {
       "id": 5,
-      "title": "Frontend Developer",
-      "duration": "Jan 2020 - Dec 2021",
-      "area": "Uganda Kampala",
-      "description": "Working closely with the client, I played a key role in transforming their vision for girl child education and protection into a reality through an impactful web application. My contributions included:\n\n• Developing a responsive and intuitive frontend using React.js and TypeScript, ensuring accessibility across various devices and improving user engagement by 40%.\n• Implementing real-time features using Firebase, allowing instant updates for educational content and support resources.\n• Optimizing the application's performance, achieving a 60% reduction in load time and enhancing overall user experience.\n• Integrating analytics tools to track user engagement and gather insights, helping the client make data-driven decisions for content and feature improvements.\n• Collaborating with NGOs and educational institutions to incorporate their resources, expanding the platform's reach and impact in promoting girl child education and protection.",
-      "tech": ["React.js", "JavaScript", "Firebase", "TypeScript", "GCP"]
+      "title": "Lead Full-Stack Engineer",
+      "duration": "2021 - 2022",
+      "area": "Healthcare Technology & Compliance",
+      "description": "Designed complete healthcare platform reducing patient wait times by 40% and improving provider workflow efficiency by 25%. Maintained zero security incidents while meeting HIPAA compliance requirements. Built real-time synchronization between mobile and web platforms.",
+      "tech": ["Android", "React.js", "Node.js", "HIPAA Compliance", "Healthcare APIs", "Encrypted Storage"]
+    },
+    "Just the way you are girl": {
+      "id": 6,
+      "title": "React Developer",
+      "duration": "2020 - 2021",
+      "area": "Frontend Development & E-commerce",
+      "description": "Built 15+ responsive websites achieving 98% client satisfaction. Reduced average page load times by 50% and increased mobile conversion rates by 25% for e-commerce clients. Established reusable component libraries reducing future development time by 40%.",
+      "tech": ["React.js", "E-commerce", "Performance Optimization", "Cross-browser Compatibility", "Payment Integration"]
     }
   }
 }

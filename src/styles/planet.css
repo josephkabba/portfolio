@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: var(--circle-border) solid rgba(15, 23, 43, var(--circle-color-opacity));
+  border: var(--circle-border) solid rgba(77, 208, 225, var(--circle-color-opacity));
   border-radius: 50%;
   width: var(--circle-size);
   height: var(--circle-size);
@@ -18,6 +18,13 @@
 .side-image {
   position: absolute;
   object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.side-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(77, 208, 225, 0.6);
 }
 
 .spinning-circle {
@@ -29,6 +36,11 @@
 .center-image {
   z-index: 1000;
   object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(77, 208, 225, 0.7);
+  box-shadow: 
+    0 0 30px rgba(77, 208, 225, 0.3),
+    inset 0 0 30px rgba(77, 208, 225, 0.1);
 }
 
 @keyframes rotate {
@@ -38,4 +50,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.orbit-glow {
+  box-shadow: 
+    0 0 20px rgba(77, 208, 225, 0.4),
+    0 0 40px rgba(77, 208, 225, 0.2);
 }
